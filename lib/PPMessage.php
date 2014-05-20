@@ -70,7 +70,7 @@ abstract class PPMessage
 				continue; // NULL
 			}
 		
-			if (!class_exists($type = PPUtils::propertyType($this, $property)) && !$this->isBuiltInType($type)) {
+			if (!class_exists($type = PPUtils::propertyType($this, $property), false) && !$this->isBuiltInType($type)) {
 				trigger_error("Class $type not found.", E_USER_NOTICE);
 				continue; // just ignore
 			}
